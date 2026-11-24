@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar 2 Exercises — الاختبار الإلكتروني التفاعلي (Relative Clauses: where)</title>
+    <!-- تحميل مكتبة Tailwind CSS للتصميم العصري المتجاوب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل الخطوط العربية والإنجليزية الواضحة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f9f7f1;
+            background-image:
+                radial-gradient(at 10% 8%, rgba(132, 204, 22, 0.22) 0px, transparent 48%),
+                radial-gradient(at 90% 12%, rgba(251, 191, 36, 0.28) 0px, transparent 48%),
+                radial-gradient(at 84% 86%, rgba(234, 88, 12, 0.16) 0px, transparent 50%),
+                radial-gradient(at 14% 84%, rgba(20, 184, 166, 0.18) 0px, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236e8042' fill-opacity='0.055'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        .en-text {
+            font-family: 'Fredoka', 'Inter', sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        /* تأثيرات حركية ناعمة */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.85); opacity: 0.85; }
+            50% { transform: scale(1.18); opacity: 0.25; }
+            100% { transform: scale(0.85); opacity: 0.85; }
+        }
+        .speaking-ring {
+            animation: pulse-ring 1.5s infinite ease-in-out;
+        }
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float-gentle 3.8s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+        .shake {
+            animation: shake 0.45s ease-in-out;
+        }
+        @keyframes pop-in {
+            0% { transform: scale(0.93); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop {
+            animation: pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        .confetti-piece {
+            position: fixed;
+            top: -15px;
+            z-index: 90;
+            pointer-events: none;
+            animation: confetti-fall linear forwards;
+        }
+        .audio-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .audio-btn:hover {
+            transform: scale(1.05);
+        }
+        .audio-btn:active {
+            transform: scale(0.95);
+        }
+        .clickable-phrase {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .clickable-phrase:hover {
+            transform: translateY(-1px);
+        }
+        /* تظليل البطاقة أو السطر النشط أثناء قراءة المعلمة */
+        .active-reading-box {
+            background-color: #fef9c3 !important;
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.36), 0 12px 24px -4px rgba(245, 158, 11, 0.22) !important;
+            transform: scale(1.01);
+            transition: all 0.25s ease;
+            position: relative;
+            z-index: 10;
+        }
+        .active-reading-text {
+            background: linear-gradient(120deg, #fde047 0%, #fef08a 100%);
+            padding: 2px 8px;
+            border-radius: 8px;
+            color: #78350f !important;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            transition: all 0.25s ease;
+        }
+        /* اللوح الخشبي والأشرطة الزيتونية المطابقة لأوراق Grammar 2 */
+        .wood-banner {
+            background: linear-gradient(180deg, #fde08d 0%, #f6c453 48%, #e5a93c 100%);
+            border: 3px solid #78350f;
+            box-shadow: 0 5px 0 #78350f, inset 0 2px 0 rgba(255, 255, 255, 0.65);
+        }
+        .olive-ribbon {
+            background: linear-gradient(135deg, #657b37 0%, #7c9347 55%, #5b7030 100%);
+            box-shadow: 0 10px 25px -8px rgba(91, 112, 48, 0.45);
+        }
+        .glass-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 18px 42px -15px rgba(91, 112, 48, 0.16);
+        }
+        /* شريط التقدم المخطط */
+        .progress-striped {
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.22) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0.22) 75%, transparent 75%, transparent);
+            background-size: 1.25rem 1.25rem;
+        }
+        /* تنسيق سطر الكتابة المنقط (Answer -----) */
+        .answer-line-input {
+            border: 2px dashed #cbd5e1;
+            transition: all 0.2s ease;
+        }
+        .answer-line-input:focus {
+            border-style: solid;
+            border-color: #d97706;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-24">
+
+    <!-- ========================================== -->
+    <!-- الشريط العلوي الثابت: العنوان + نسبة الإنجاز + الصوت التعليمي الهادئ -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-lime-200/80">
+        <div class="max-w-5xl mx-auto px-4 py-2.5 space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2.5">
+                <!-- عنوان الاختبار -->
+                <div class="flex items-center gap-2.5">
+                    <button type="button" onclick="speakText('Grammar 2 Exercises. Using the relative adverb where. Four interactive exercises with instant feedback.')" class="audio-btn olive-ribbon text-white px-4 sm:px-5 py-1.5 rounded-full font-bold text-sm sm:text-base flex items-center gap-2" title="اضغط لسماع عنوان الاختبار">
+                        <i class="fa-solid fa-lightbulb text-amber-200"></i>
+                        <span class="en-text">Grammar 2 Exercises</span>
+                    </button>
+                    <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-extrabold text-lime-950 bg-lime-100 border border-lime-300 px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-chart-line text-lime-700"></i>
+                        الإنجاز: <span id="header-progress-pct" class="en-text text-sm text-orange-700">0%</span>
+                    </span>
+                </div>
+
+                <!-- مؤشر المعلمة الصوتية (نفس نظام الصوت التعليمي الهادئ) -->
+                <div id="teacher-status-box" class="flex flex-wrap items-center gap-2 bg-teal-50 border border-teal-200 px-3 py-1.5 rounded-full shadow-inner">
+                    <div class="relative flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white shrink-0">
+                        <span id="teacher-pulse" class="hidden absolute inset-0 rounded-full bg-teal-400 speaking-ring"></span>
+                        <i class="fa-solid fa-chalkboard-user relative z-10 text-xs"></i>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5 text-[11px] text-teal-700">
+                        <span class="hidden sm:inline">الصوت:</span>
+                        <select id="teacher-voice-select" onchange="changeTeacherVoice(this.value)" class="bg-white/90 border border-teal-300 rounded-lg px-2 py-0.5 text-[11px] font-bold text-teal-900 focus:outline-none cursor-pointer">
+                            <option value="calm-female" selected>معلمة هادئة (0.76x)</option>
+                            <option value="calm-male">معلم هادئ (0.76x)</option>
+                        </select>
+                        <button type="button" onclick="toggleSpeechSpeed()" id="speed-toggle-btn" class="bg-white/90 hover:bg-teal-100 border border-teal-300 rounded-lg px-2 py-0.5 text-[11px] font-bold text-teal-900 transition cursor-pointer" title="تبديل سرعة النطق للتدريب">
+                            <i class="fa-solid fa-gauge-high text-teal-600"></i> <span id="speed-label">هادئ (0.76x)</span>
+                        </button>
+                    </div>
+                    <button type="button" onclick="stopAudio()" id="stop-audio-btn" class="hidden bg-rose-100 hover:bg-rose-200 text-rose-700 px-2.5 py-0.5 rounded-full text-xs font-bold transition">
+                        <i class="fa-solid fa-stop"></i> إيقاف
+                    </button>
+                </div>
+            </div>
+
+            <!-- شريط نسبة الإنجاز المباشر المدمج أعلى الصفحة -->
+            <div class="flex items-center gap-3">
+                <span class="text-[11px] sm:text-xs font-extrabold text-slate-600 shrink-0">
+                    نسبة الإنجاز (<span id="progress-count-text" class="en-text text-orange-700">0 / 20</span>)
+                </span>
+                <div class="flex-1 h-3 bg-slate-200/90 rounded-full overflow-hidden shadow-inner border border-slate-300/60">
+                    <div id="top-progress-bar" class="h-full w-0 bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 progress-striped rounded-full transition-all duration-500 ease-out"></div>
+                </div>
+                <span id="top-progress-pct-label" class="en-text text-xs font-black text-emerald-700 w-10 text-left">0%</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- مؤشر القراءة الحي (Live Reading Toast) -->
+    <div id="liveReadingToast" class="fixed bottom-16 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-8 max-w-[94vw]">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></div>
+        <div class="truncate" dir="ltr">
+            <span id="toastRateLabel" class="text-[11px] text-slate-400 block font-sans">Calm Educational Voice (0.76x):</span>
+            <span id="toastWord" class="en-text font-black text-amber-300 text-base sm:text-lg tracking-wide">...</span>
+        </div>
+    </div>
+
+    <!-- صندوق الإشعارات اللطيف -->
+    <div id="toast-message" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50 hidden bg-slate-800 text-white px-6 py-3 rounded-2xl shadow-xl font-bold text-sm flex items-center gap-2 transition-all">
+        <i class="fa-solid fa-sparkles text-yellow-400"></i>
+        <span id="toast-text">أحسنت!</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- المحتوى الرئيسي للاختبار الإلكتروني -->
+    <!-- ========================================== -->
+    <main class="max-w-5xl mx-auto px-4 pt-6 space-y-9">
+
+        <!-- ========================================== -->
+        <!-- البانر الافتتاحي: Grammar 2 Exercises + بيانات الطالب والإحصائيات -->
+        <!-- ========================================== -->
+        <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#5d7231] via-[#748c40] to-[#a95124] text-white shadow-2xl border-2 border-amber-300/70 p-6 sm:p-7">
+            <div class="pointer-events-none absolute -top-16 -left-16 w-60 h-60 rounded-full bg-amber-300/20 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-20 -right-12 w-64 h-64 rounded-full bg-lime-300/20 blur-3xl"></div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div class="space-y-3.5 flex-1">
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <span class="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-amber-100 px-3.5 py-1 rounded-full text-xs font-extrabold backdrop-blur-sm">
+                            <i class="fa-solid fa-lightbulb text-yellow-300"></i>
+                            <span>Grammar 2 Exercises • Relative Clauses (where)</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-amber-400/25 border border-amber-200/40 text-amber-100 px-3 py-1 rounded-full text-xs font-extrabold">
+                            <i class="fa-solid fa-wand-magic-sparkles text-yellow-200"></i>
+                            <span>تصحيح ذكي وتغذية راجعة فورية</span>
+                        </span>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-black leading-tight">
+                        الاختبار الإلكتروني لقاعدة الوصل للمكان <span class="en-text text-yellow-300">(where)</span>
+                        <span class="en-text block text-amber-200 text-lg sm:text-xl font-bold mt-1">Grammar 2 — Interactive Exercises (4 Parts)</span>
+                    </h1>
+
+                    <p class="text-amber-50/95 text-xs sm:text-sm font-semibold max-w-2xl leading-relaxed">
+                        أجب عن الأسئلة الأربعة التالية (<strong class="text-yellow-200">20 فقرة</strong>)، وتابع شريط نسبة الإنجاز بالأعلى، ويمكنك الاستماع لكل جملة بصوت المعلمة الهادئ أو طلب تلميح في أي وقت!
+                    </p>
+
+                    <!-- اسم الطالب وروابط التنقل السريعة -->
+                    <div class="flex flex-wrap items-center gap-2 pt-1">
+                        <div class="relative flex-1 min-w-[200px] max-w-xs">
+                            <i class="fa-solid fa-user-graduate absolute right-3.5 top-1/2 -translate-y-1/2 text-lime-800 text-sm"></i>
+                            <input id="student-name-input" type="text" placeholder="اكتب اسمك هنا للتقرير النهائي..." class="w-full bg-white/95 text-slate-800 placeholder-slate-400 rounded-xl pr-9 pl-3 py-2 text-xs sm:text-sm font-bold border-2 border-amber-200 focus:outline-none focus:border-yellow-300 shadow-sm">
+                        </div>
+                        <a href="#sec-ex1" class="bg-white/20 hover:bg-white/30 border border-white/30 px-3 py-2 rounded-xl text-xs font-bold transition">1. اختر</a>
+                        <a href="#sec-ex2" class="bg-white/20 hover:bg-white/30 border border-white/30 px-3 py-2 rounded-xl text-xs font-bold transition">2. اربط بـ where</a>
+                        <a href="#sec-ex3" class="bg-white/20 hover:bg-white/30 border border-white/30 px-3 py-2 rounded-xl text-xs font-bold transition">3. كوّن سؤالاً</a>
+                        <a href="#sec-ex4" class="bg-yellow-300 hover:bg-yellow-200 text-slate-900 px-3 py-2 rounded-xl text-xs font-extrabold transition shadow">4. صحّح الخطأ</a>
+                    </div>
+                </div>
+
+                <!-- الرسم الكرتوني الترحيبي + إحصائيات الاختبار المصغّرة -->
+                <div class="flex flex-row lg:flex-col items-center justify-between gap-3 shrink-0 lg:w-52">
+                    <!-- رسم SVG مستوحى من ورقة Grammar 2 (الشخصية اللطيفة بالقلم ومراحل الإنجاز) -->
+                    <div class="hidden sm:flex w-44 h-24 rounded-2xl bg-white/95 border-2 border-amber-200 shadow-md items-center justify-center p-2 animate-float">
+                        <svg viewBox="0 0 210 100" class="w-full h-full">
+                            <!-- مسار الإنجاز المنقط -->
+                            <line x1="18" y1="74" x2="178" y2="74" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="24" cy="74" r="8" fill="#ffffff" stroke="#f59e0b" stroke-width="3"/>
+                            <path d="M21,74 L24,77 L29,70" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="58" cy="74" r="8" fill="#ffffff" stroke="#f59e0b" stroke-width="3"/>
+                            <path d="M55,74 L58,77 L63,70" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="92" cy="74" r="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+                            <circle cx="126" cy="74" r="8" fill="#ffffff" stroke="#f59e0b" stroke-width="3"/>
+                            <circle cx="160" cy="74" r="8" fill="#ffffff" stroke="#f59e0b" stroke-width="3"/>
+                            <!-- العلم الذهبي في النهاية -->
+                            <line x1="168" y1="74" x2="176" y2="48" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M176,48 Q192,46 200,54 Q190,62 173,60 Z" fill="#fbbf24" stroke="#334155" stroke-width="2.2" stroke-linejoin="round"/>
+                            <!-- الشخصية اللطيفة تحمل القلم -->
+                            <circle cx="136" cy="40" r="15" fill="#ffffff" stroke="#334155" stroke-width="2.6"/>
+                            <circle cx="131" cy="37" r="2" fill="#334155"/>
+                            <circle cx="141" cy="37" r="2" fill="#334155"/>
+                            <path d="M130,44 Q136,50 142,44" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="129" y="55" width="14" height="14" rx="4" fill="#f59e0b" stroke="#334155" stroke-width="2.2"/>
+                            <line x1="133" y1="69" x2="128" y2="85" stroke="#334155" stroke-width="2.6" stroke-linecap="round"/>
+                            <line x1="139" y1="69" x2="144" y2="85" stroke="#334155" stroke-width="2.6" stroke-linecap="round"/>
+                            <!-- القلم الطويل -->
+                            <line x1="136" y1="12" x2="94" y2="70" stroke="#facc15" stroke-width="7" stroke-linecap="round"/>
+                            <line x1="136" y1="12" x2="94" y2="70" stroke="#78350f" stroke-width="1.8" stroke-linecap="round"/>
+                            <polygon points="94,70 89,76 98,74" fill="#334155"/>
+                        </svg>
+                    </div>
+
+                    <!-- بطاقات الأرقام الحية -->
+                    <div class="grid grid-cols-3 gap-2 w-full">
+                        <div class="bg-white/15 backdrop-blur-sm border border-white/25 rounded-2xl p-2 text-center">
+                            <div class="text-[10px] font-bold text-amber-100">الفقرات</div>
+                            <div class="en-text text-lg font-black text-white">20</div>
+                        </div>
+                        <div class="bg-white/15 backdrop-blur-sm border border-white/25 rounded-2xl p-2 text-center">
+                            <div class="text-[10px] font-bold text-amber-100">أجبت</div>
+                            <div id="hero-answered-count" class="en-text text-lg font-black text-yellow-300">0</div>
+                        </div>
+                        <div class="bg-white/15 backdrop-blur-sm border border-white/25 rounded-2xl p-2 text-center">
+                            <div class="text-[10px] font-bold text-amber-100">الدرجة</div>
+                            <div id="hero-score-badge" class="en-text text-base font-black text-emerald-200">--/20</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- تذكير سريع بقاعدة استخدام (where) للمكان -->
+        <div class="bg-white/90 border-2 border-lime-300/80 rounded-2xl p-3.5 sm:px-5 shadow-sm flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-extrabold text-lime-950">
+                <span class="w-8 h-8 rounded-xl bg-lime-600 text-white flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span>تذكّر القاعدة الذهبية: نستخدم <span class="en-text text-orange-700 font-black">where</span> للربط مع <strong>المكان (Place)</strong> ونحذف كلمة <span class="en-text text-rose-600 font-black">there</span> عند الربط • وفي السؤال نُقدّم <span class="en-text text-sky-700 font-black">Is / Are</span> في البداية!</span>
+            </div>
+            <button type="button" onclick="speakText('Remember the rule: We use where to talk about places. When joining two sentences with where, remove the word there.')" class="audio-btn bg-lime-100 hover:bg-lime-200 text-lime-900 border border-lime-300 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5">
+                <i class="fa-solid fa-volume-high"></i> استمع للقاعدة
+            </button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- السؤال الأول: Ex. 1 — Choose the correct answer. (4 فقرات) -->
+        <!-- ========================================== -->
+        <section id="sec-ex1" class="glass-section rounded-3xl border-2 border-lime-300 overflow-hidden">
+            <div dir="ltr" class="bg-gradient-to-r from-lime-50 via-amber-50/70 to-orange-50/60 border-b-2 border-lime-200 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('Exercise 1. Choose the correct answer.')">
+                    <div class="relative w-12 h-14 bg-white border-[3px] border-slate-800 rounded-xl shadow-md flex items-center justify-center shrink-0 -rotate-3">
+                        <div class="absolute -top-2.5 w-6 h-3 bg-amber-400 border-2 border-slate-800 rounded-md"></div>
+                        <span class="en-text text-sm font-black text-slate-900">Ex.1</span>
+                    </div>
+                    <div class="wood-banner px-5 py-2 rounded-2xl">
+                        <div class="text-[10px] font-black uppercase tracking-widest text-amber-950/80">Question 1 • 4 Marks</div>
+                        <h2 class="en-text text-lg sm:text-2xl font-black text-slate-900 leading-tight">Choose the correct answer.</h2>
+                    </div>
+                </div>
+                <div dir="rtl" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-white border border-lime-300 text-lime-900 px-3 py-1 rounded-full text-xs font-extrabold">
+                        أنجزت: <span id="ex1-progress-badge" class="en-text text-orange-600">0/4</span>
+                    </span>
+                    <button type="button" onclick="checkEx1()" class="audio-btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-check"></i>
+                        <span>تحقق من السؤال 1</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-4">
+                <p class="text-xs sm:text-sm font-bold text-slate-600 flex items-center gap-2 bg-lime-50/90 border border-lime-200 rounded-2xl px-4 py-2.5">
+                    <i class="fa-solid fa-circle-check text-lime-600 text-base"></i>
+                    <span>اختر الإجابة الصحيحة (<span class="en-text font-black">a / b / c / d</span>) لإكمال كل جملة تصف مكاناً.</span>
+                </p>
+
+                <div id="ex1-container" dir="ltr" class="space-y-4"></div>
+                <div id="ex1-section-feedback" class="hidden text-center font-bold text-sm sm:text-base py-3 px-5 rounded-2xl"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- السؤال الثاني: Ex. 2 — Join the sentences using (where). (5 فقرات) -->
+        <!-- ========================================== -->
+        <section id="sec-ex2" class="glass-section rounded-3xl border-2 border-amber-300 overflow-hidden">
+            <div dir="ltr" class="bg-gradient-to-r from-amber-50 via-orange-50/70 to-yellow-50/60 border-b-2 border-amber-200 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('Exercise 2. Join the sentences using where.')">
+                    <div class="relative w-12 h-14 bg-white border-[3px] border-slate-800 rounded-xl shadow-md flex items-center justify-center shrink-0 rotate-2">
+                        <div class="absolute -top-2.5 w-6 h-3 bg-orange-400 border-2 border-slate-800 rounded-md"></div>
+                        <span class="en-text text-sm font-black text-slate-900">Ex.2</span>
+                    </div>
+                    <div class="wood-banner px-5 py-2 rounded-2xl">
+                        <div class="text-[10px] font-black uppercase tracking-widest text-amber-950/80">Question 2 • 5 Marks</div>
+                        <h2 class="en-text text-lg sm:text-2xl font-black text-slate-900 leading-tight">Join the sentences using (where).</h2>
+                    </div>
+                </div>
+                <div dir="rtl" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-white border border-amber-300 text-amber-900 px-3 py-1 rounded-full text-xs font-extrabold">
+                        أنجزت: <span id="ex2-progress-badge" class="en-text text-orange-600">0/5</span>
+                    </span>
+                    <button type="button" onclick="checkWrittenSection('ex2')" class="audio-btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-check"></i>
+                        <span>تحقق من السؤال 2</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-4">
+                <p class="text-xs sm:text-sm font-bold text-slate-600 flex items-center gap-2 bg-amber-50/90 border border-amber-200 rounded-2xl px-4 py-2.5">
+                    <i class="fa-solid fa-link text-amber-600 text-base"></i>
+                    <span>اربط بين الجملتين لتصبح جملة واحدة باستخدام <span class="en-text font-black text-orange-700">where</span>، وتذكّر حذف النقطة الفاصلة وحذف كلمة <span class="en-text font-black text-rose-600">there</span> من النهاية!</span>
+                </p>
+
+                <div id="ex2-container" dir="ltr" class="space-y-4"></div>
+                <div id="ex2-section-feedback" class="hidden text-center font-bold text-sm sm:text-base py-3 px-5 rounded-2xl"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- السؤال الثالث: Ex. 3 — Make questions. (5 فقرات) -->
+        <!-- ========================================== -->
+        <section id="sec-ex3" class="glass-section rounded-3xl border-2 border-sky-300 overflow-hidden">
+            <div dir="ltr" class="bg-gradient-to-r from-sky-50 via-teal-50/70 to-amber-50/50 border-b-2 border-sky-200 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('Exercise 3. Make questions.')">
+                    <div class="relative w-12 h-14 bg-white border-[3px] border-slate-800 rounded-xl shadow-md flex items-center justify-center shrink-0 -rotate-2">
+                        <div class="absolute -top-2.5 w-6 h-3 bg-sky-400 border-2 border-slate-800 rounded-md"></div>
+                        <span class="en-text text-sm font-black text-slate-900">Ex.3</span>
+                    </div>
+                    <div class="wood-banner px-5 py-2 rounded-2xl">
+                        <div class="text-[10px] font-black uppercase tracking-widest text-amber-950/80">Question 3 • 5 Marks</div>
+                        <h2 class="en-text text-lg sm:text-2xl font-black text-slate-900 leading-tight">Make questions.</h2>
+                    </div>
+                </div>
+                <div dir="rtl" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-white border border-sky-300 text-sky-900 px-3 py-1 rounded-full text-xs font-extrabold">
+                        أنجزت: <span id="ex3-progress-badge" class="en-text text-sky-700">0/5</span>
+                    </span>
+                    <button type="button" onclick="checkWrittenSection('ex3')" class="audio-btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-check"></i>
+                        <span>تحقق من السؤال 3</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-4">
+                <p class="text-xs sm:text-sm font-bold text-slate-600 flex items-center gap-2 bg-sky-50/90 border border-sky-200 rounded-2xl px-4 py-2.5">
+                    <i class="fa-solid fa-circle-question text-sky-600 text-base"></i>
+                    <span>حوّل كل جملة إلى سؤال بتقديم <span class="en-text font-black text-sky-700">Is</span> أو <span class="en-text font-black text-sky-700">Are</span> إلى بداية الجملة ولا تنسَ علامة الاستفهام (<span class="en-text font-black">?</span>).</span>
+                </p>
+
+                <div id="ex3-container" dir="ltr" class="space-y-4"></div>
+                <div id="ex3-section-feedback" class="hidden text-center font-bold text-sm sm:text-base py-3 px-5 rounded-2xl"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- السؤال الرابع: Ex. 4 — Correct the mistakes. (6 فقرات) -->
+        <!-- ========================================== -->
+        <section id="sec-ex4" class="glass-section rounded-3xl border-2 border-purple-300 overflow-hidden">
+            <div dir="ltr" class="bg-gradient-to-r from-purple-50 via-amber-50/70 to-rose-50/50 border-b-2 border-purple-200 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('Exercise 4. Correct the mistakes.')">
+                    <div class="relative w-12 h-14 bg-white border-[3px] border-slate-800 rounded-xl shadow-md flex items-center justify-center shrink-0 rotate-2">
+                        <div class="absolute -top-2.5 w-6 h-3 bg-purple-400 border-2 border-slate-800 rounded-md"></div>
+                        <span class="en-text text-sm font-black text-slate-900">Ex.4</span>
+                    </div>
+                    <div class="wood-banner px-5 py-2 rounded-2xl">
+                        <div class="text-[10px] font-black uppercase tracking-widest text-amber-950/80">Question 4 • 6 Marks</div>
+                        <h2 class="en-text text-lg sm:text-2xl font-black text-slate-900 leading-tight">Correct the mistakes.</h2>
+                    </div>
+                </div>
+                <div dir="rtl" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-white border border-purple-300 text-purple-900 px-3 py-1 rounded-full text-xs font-extrabold">
+                        أنجزت: <span id="ex4-progress-badge" class="en-text text-purple-700">0/6</span>
+                    </span>
+                    <button type="button" onclick="checkWrittenSection('ex4')" class="audio-btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-check"></i>
+                        <span>تحقق من السؤال 4</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-4">
+                <p class="text-xs sm:text-sm font-bold text-slate-600 flex items-center gap-2 bg-purple-50/90 border border-purple-200 rounded-2xl px-4 py-2.5">
+                    <i class="fa-solid fa-magnifying-glass text-purple-600 text-base"></i>
+                    <span>اكتشف الأخطاء القواعدية في كل جملة (ضمير الوصل أو الفعل المفرد/الجمع) وأعد كتابة الجملة بشكل صحيح في خانة الإجابة!</span>
+                </p>
+
+                <div id="ex4-container" dir="ltr" class="space-y-4"></div>
+                <div id="ex4-section-feedback" class="hidden text-center font-bold text-sm sm:text-base py-3 px-5 rounded-2xl"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- لوحة إنهاء الاختبار والتصحيح الشامل -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-3xl border-2 border-amber-300 shadow-lg p-5 sm:p-6 text-center space-y-4">
+            <h3 class="text-lg sm:text-xl font-black text-slate-800">هل أنهيت جميع الأسئلة الأربعة؟ احصل على درجتك ونسبة الإنجاز والتغذية الراجعة الآن!</h3>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button type="button" onclick="submitFullQuiz()" class="audio-btn bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 hover:from-emerald-700 hover:to-sky-700 text-white font-black px-7 py-3 rounded-2xl shadow-lg flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span>إنهاء الاختبار وعرض التغذية الراجعة</span>
+                </button>
+                <button type="button" onclick="showAllModelAnswers()" class="audio-btn bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 font-extrabold px-5 py-3 rounded-2xl flex items-center gap-2 text-xs sm:text-sm">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>عرض الإجابات النموذجية</span>
+                </button>
+                <button type="button" onclick="resetEntireQuiz()" class="audio-btn bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 font-bold px-5 py-3 rounded-2xl flex items-center gap-2 text-xs sm:text-sm">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>إعادة الاختبار</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- بطاقة التقرير النهائي والتغذية الراجعة التفصيلية -->
+        <!-- ========================================== -->
+        <section id="final-report-card" class="hidden animate-pop bg-white rounded-3xl border-2 border-emerald-400 shadow-2xl overflow-hidden">
+            <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 text-white p-5 sm:px-7 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <span class="w-11 h-11 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-trophy text-yellow-300"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black">التقرير النهائي لاختبار Grammar 2</h3>
+                        <p class="en-text text-xs text-emerald-100 font-semibold">Final Score, Achievement Rate &amp; Detailed Feedback</p>
+                    </div>
+                </div>
+                <button type="button" onclick="resetEntireQuiz()" class="audio-btn bg-white/20 hover:bg-white/30 border border-white/35 text-white px-4 py-1.5 rounded-full text-xs font-extrabold">
+                    <i class="fa-solid fa-rotate"></i> محاولة جديدة
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-7 space-y-6">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- دائرة النسبة المئوية للدرجة -->
+                    <div class="relative w-36 h-36 shrink-0 flex items-center justify-center">
+                        <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="#e2e8f0" stroke-width="11"/>
+                            <circle id="score-ring-circle" cx="60" cy="60" r="50" fill="none" stroke="#10b981" stroke-width="11" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" style="transition: stroke-dashoffset 0.9s ease-out;"/>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span id="final-pct-text" class="en-text text-3xl font-black text-slate-800">0%</span>
+                            <span class="text-[11px] font-bold text-slate-500">الدرجة</span>
+                        </div>
+                    </div>
+
+                    <!-- ملخص التقدير والإنجاز -->
+                    <div class="flex-1 space-y-3 text-center md:text-right">
+                        <span id="final-rating-badge" class="inline-block px-3.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300">تقدير: ممتاز</span>
+                        <h4 id="final-student-greeting" class="text-xl sm:text-2xl font-black text-slate-800">أحسنت يا بطل!</h4>
+                        <p id="final-summary-msg" class="text-sm font-bold text-slate-600 leading-relaxed"></p>
+
+                        <!-- تفصيل الدرجات حسب الأسئلة الأربعة ونسبة الإنجاز -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 pt-2">
+                            <div class="bg-lime-50 border border-lime-200 rounded-2xl p-2 text-center">
+                                <div class="text-[10px] font-bold text-lime-800">س1: اختر</div>
+                                <div id="report-ex1-score" class="en-text text-base font-black text-lime-900">0/4</div>
+                            </div>
+                            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-2 text-center">
+                                <div class="text-[10px] font-bold text-amber-800">س2: اربط بـ where</div>
+                                <div id="report-ex2-score" class="en-text text-base font-black text-amber-900">0/5</div>
+                            </div>
+                            <div class="bg-sky-50 border border-sky-200 rounded-2xl p-2 text-center">
+                                <div class="text-[10px] font-bold text-sky-800">س3: السؤال</div>
+                                <div id="report-ex3-score" class="en-text text-base font-black text-sky-900">0/5</div>
+                            </div>
+                            <div class="bg-purple-50 border border-purple-200 rounded-2xl p-2 text-center">
+                                <div class="text-[10px] font-bold text-purple-800">س4: التصحيح</div>
+                                <div id="report-ex4-score" class="en-text text-base font-black text-purple-900">0/6</div>
+                            </div>
+                            <div class="bg-emerald-50 border border-emerald-300 rounded-2xl p-2 text-center col-span-2 sm:col-span-1">
+                                <div class="text-[10px] font-bold text-emerald-800">نسبة الإنجاز</div>
+                                <div id="report-completion-pct" class="en-text text-base font-black text-emerald-900">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قائمة التغذية الراجعة التفصيلية لجميع الفقرات الـ 20 -->
+                <div class="border-t border-slate-200 pt-5 space-y-3">
+                    <h5 class="text-sm sm:text-base font-black text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-emerald-600"></i>
+                        <span>التغذية الراجعة التفصيلية لجميع الفقرات (20 فقرة):</span>
+                    </h5>
+                    <div id="detailed-feedback-list" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs font-bold"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل تعليمي -->
+    <footer class="max-w-5xl mx-auto px-4 pt-10 pb-4 text-center">
+        <div class="bg-white/85 border border-slate-200/80 rounded-2xl py-3 px-6 inline-flex flex-wrap items-center justify-center gap-3 shadow-sm text-xs sm:text-sm text-slate-600">
+            <span class="en-text font-extrabold text-teal-700 tracking-wide">LANGUA LEARN</span>
+            <span class="text-slate-300">•</span>
+            <span class="font-bold text-slate-700">جميع الحقوق محفوظة للأستاذ: ماجد سعد السويهري</span>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- البرمجة التفاعلية ونفس نظام الصوت التعليمي الهادئ -->
+    <!-- ========================================== -->
+    <script>
+        // ==========================================
+        // 1. بيانات الاختبار الكاملة (مطابقة تماماً لصور Grammar 2 المرفقة)
+        // ==========================================
+
+        // السؤال الأول: Ex. 1 — Choose the correct answer. (4 فقرات)
+        const ex1Data = [
+            {
+                id: 1,
+                before: 'This is the school',
+                after: 'students learn.',
+                options: [
+                    { key: 'a', text: 'who' },
+                    { key: 'b', text: 'which' },
+                    { key: 'c', text: 'where' },
+                    { key: 'd', text: 'what' }
+                ],
+                answer: 'c',
+                reasonAr: 'كلمة school (مدرسة) تدل على مكان يحدث فيه التعلّم، لذا نستخدم where.'
+            },
+            {
+                id: 2,
+                before: 'The desert is a place',
+                after: 'camels live.',
+                options: [
+                    { key: 'a', text: 'who' },
+                    { key: 'b', text: 'where' },
+                    { key: 'c', text: 'when' },
+                    { key: 'd', text: 'whose' }
+                ],
+                answer: 'b',
+                reasonAr: 'كلمة a place / desert (الصحراء) تدل على مكان تعيش فيه الجمال، لذا نستخدم where.'
+            },
+            {
+                id: 3,
+                before: 'That is the hospital',
+                after: 'doctors work.',
+                options: [
+                    { key: 'a', text: 'where' },
+                    { key: 'b', text: 'who' },
+                    { key: 'c', text: 'which' },
+                    { key: 'd', text: 'what' }
+                ],
+                answer: 'a',
+                reasonAr: 'كلمة hospital (مستشفى) مكان يعمل فيه الأطباء، لذا الإجابة الصحيحة where.'
+            },
+            {
+                id: 4,
+                before: 'This is the park',
+                after: 'children play.',
+                options: [
+                    { key: 'a', text: 'whose' },
+                    { key: 'b', text: 'which' },
+                    { key: 'c', text: 'where' },
+                    { key: 'd', text: 'who' }
+                ],
+                answer: 'c',
+                reasonAr: 'كلمة park (حديقة) مكان يلعب فيه الأطفال، لذا نختار where.'
+            }
+        ];
+
+        // الأسئلة الكتابية (Ex. 2, Ex. 3, Ex. 4)
+        const writtenSectionsData = {
+            ex2: {
+                titleAr: 'السؤال الثاني (الربط باستخدام where)',
+                accentRing: 'border-amber-200',
+                badgeBg: 'bg-orange-700',
+                items: [
+                    {
+                        id: 1,
+                        prompt: 'The park is a place. Children play there.',
+                        model: 'The park is a place where children play.',
+                        accepted: [
+                            'The park is a place where children play.'
+                        ],
+                        hint: 'اربط بـ where بعد a place ولا تنسَ حذف كلمة there!',
+                        reasonAr: 'نستبدل النقطة بـ where ونحول الحرف الأول من Children لصغير ونحذف there.'
+                    },
+                    {
+                        id: 2,
+                        prompt: 'The library is a place. Students read there.',
+                        model: 'The library is a place where students read.',
+                        accepted: [
+                            'The library is a place where students read.'
+                        ],
+                        hint: 'ابدأ بـ The library is a place where ... واحذف there.',
+                        reasonAr: 'نربط الجملتين بـ where ونحذف there لتصبح: The library is a place where students read.'
+                    },
+                    {
+                        id: 3,
+                        prompt: 'The hospital is a place. Doctors work there.',
+                        model: 'The hospital is a place where doctors work.',
+                        accepted: [
+                            'The hospital is a place where doctors work.'
+                        ],
+                        hint: 'ضع where بين الجملتين واحذف كلمة there.',
+                        reasonAr: 'نضع where بعد a place ونحذف there فتصبح: The hospital is a place where doctors work.'
+                    },
+                    {
+                        id: 4,
+                        prompt: 'The farm is a place. Farmers grow vegetables there.',
+                        model: 'The farm is a place where farmers grow vegetables.',
+                        accepted: [
+                            'The farm is a place where farmers grow vegetables.'
+                        ],
+                        hint: 'ابدأ بـ The farm is a place where farmers ... بدون there.',
+                        reasonAr: 'نربط الجملتين بـ where ونحذف كلمة there في النهاية.'
+                    },
+                    {
+                        id: 5,
+                        prompt: 'The desert is a place. Camels live there.',
+                        model: 'The desert is a place where camels live.',
+                        accepted: [
+                            'The desert is a place where camels live.'
+                        ],
+                        hint: 'ضع where بعد a place ثم camels live واحذف there.',
+                        reasonAr: 'عند الربط بـ where نحذف there فتصبح: The desert is a place where camels live.'
+                    }
+                ]
+            },
+            ex3: {
+                titleAr: 'السؤال الثالث (تكوين السؤال)',
+                accentRing: 'border-sky-200',
+                badgeBg: 'bg-orange-700',
+                items: [
+                    {
+                        id: 1,
+                        prompt: 'This is the park where children play.',
+                        model: 'Is this the park where children play?',
+                        accepted: [
+                            'Is this the park where children play?'
+                        ],
+                        hint: 'قدّم Is قبل this وضع علامة استفهام (?) في النهاية.',
+                        reasonAr: 'نبدّل موضع This is إلى Is this وننهي الجملة بعلامة استفهام (?).'
+                    },
+                    {
+                        id: 2,
+                        prompt: 'That is the hospital where doctors work.',
+                        model: 'Is that the hospital where doctors work?',
+                        accepted: [
+                            'Is that the hospital where doctors work?'
+                        ],
+                        hint: 'ابدأ السؤال بـ Is that ...؟',
+                        reasonAr: 'نقدّم الفعل المساعد Is قبل that لتصبح: Is that the hospital where doctors work?'
+                    },
+                    {
+                        id: 3,
+                        prompt: 'These are the lakes where swans live.',
+                        model: 'Are these the lakes where swans live?',
+                        accepted: [
+                            'Are these the lakes where swans live?'
+                        ],
+                        hint: 'مع الجمع These are نقدّم Are في البداية!',
+                        reasonAr: 'نبدّل These are إلى Are these ونضع علامة استفهام في النهاية.'
+                    },
+                    {
+                        id: 4,
+                        prompt: 'Those are the trees where monkeys play.',
+                        model: 'Are those the trees where monkeys play?',
+                        accepted: [
+                            'Are those the trees where monkeys play?'
+                        ],
+                        hint: 'ابدأ السؤال بـ Are those ...؟',
+                        reasonAr: 'نقدّم Are قبل those فتصبح: Are those the trees where monkeys play?'
+                    },
+                    {
+                        id: 5,
+                        prompt: 'This is the library where students read.',
+                        model: 'Is this the library where students read?',
+                        accepted: [
+                            'Is this the library where students read?'
+                        ],
+                        hint: 'قدّم Is قبل this ولا تنسَ علامة الاستفهام (?).',
+                        reasonAr: 'نبدّل This is إلى Is this فتصبح: Is this the library where students read?'
+                    }
+                ]
+            },
+            ex4: {
+                titleAr: 'السؤال الرابع (تصحيح الأخطاء)',
+                accentRing: 'border-purple-200',
+                badgeBg: 'bg-orange-700',
+                items: [
+                    {
+                        id: 1,
+                        prompt: 'The school is a place who students study.',
+                        model: 'The school is a place where students study.',
+                        accepted: [
+                            'The school is a place where students study.',
+                            'where'
+                        ],
+                        hint: 'نحن نتحدث عن مكان (a place)، فهل نستخدم who أم where؟',
+                        reasonAr: 'الخطأ في who (تُستخدم للأشخاص)؛ الصحيح where لأنها تصف مكاناً.'
+                    },
+                    {
+                        id: 2,
+                        prompt: 'This are the hospital which doctors work.',
+                        model: 'This is the hospital where doctors work.',
+                        accepted: [
+                            'This is the hospital where doctors work.'
+                        ],
+                        hint: 'انتبه لخطأين: This مفرد (يأخذ is وليس are)، والمستشفى مكان (يأخذ where وليس which)!',
+                        reasonAr: 'يوجد خطآن: This مفرد فتأخذ is، وللمكان نستخدم where بدلاً من which.'
+                    },
+                    {
+                        id: 3,
+                        prompt: 'The zoo is a place where animals lives.',
+                        model: 'The zoo is a place where animals live.',
+                        accepted: [
+                            'The zoo is a place where animals live.',
+                            'live'
+                        ],
+                        hint: 'كلمة animals جمع! هل نضيف (s) للفعل في المضارع البسيط مع الجمع؟',
+                        reasonAr: 'الخطأ في lives؛ لأن الفاعل animals جمع، فيأتي الفعل بدون s أي live.'
+                    },
+                    {
+                        id: 4,
+                        prompt: 'Are these the parks who children play?',
+                        model: 'Are these the parks where children play?',
+                        accepted: [
+                            'Are these the parks where children play?',
+                            'where'
+                        ],
+                        hint: 'كلمة the parks (الحدائق) تدل على مكان، فما ضمير الوصل الصحيح بدلاً من who؟',
+                        reasonAr: 'الخطأ في who؛ الصحيح where لأن الحدائق مكان يلعب فيه الأطفال.'
+                    },
+                    {
+                        id: 5,
+                        prompt: 'That is the farm whose farmers grow vegetables.',
+                        model: 'That is the farm where farmers grow vegetables.',
+                        accepted: [
+                            'That is the farm where farmers grow vegetables.',
+                            'where'
+                        ],
+                        hint: 'كلمة the farm (المزرعة) مكان؛ ما الكلمة الصحيحة بدلاً من whose؟',
+                        reasonAr: 'الخطأ في whose (تُستخدم للملكية)؛ الصحيح where لأنها تدل على مكان.'
+                    },
+                    {
+                        id: 6,
+                        prompt: 'Is this the desert which camels lives?',
+                        model: 'Is this the desert where camels live?',
+                        accepted: [
+                            'Is this the desert where camels live?'
+                        ],
+                        hint: 'انتبه لخطأين: الصحراء مكان (where بدل which)، وكلمة camels جمع (live بدل lives)!',
+                        reasonAr: 'يوجد خطآن: نستخدم where للمكان بدلاً من which، و live مع الجمع camels بدلاً من lives.'
+                    }
+                ]
+            }
+        };
+
+        // ==========================================
+        // 2. حالة إجابات الطالب وتطبيع النصوص للتصحيح الذكي
+        // ==========================================
+        const quizState = {
+            ex1: {},
+            ex2: {},
+            ex3: {},
+            ex4: {}
+        };
+
+        /**
+         * يطبّع الجملة الإنجليزية للتصحيح الذكي دون التشدد في المسافات أو علامات الترقيم أو حالة الأحرف
+         */
+        function normalizeSentence(str) {
+            return (str || '')
+                .toLowerCase()
+                .replace(/[’‘`]/g, "'")
+                .replace(/[.?!,]+$/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        function isWrittenAnswerCorrect(userRaw, item) {
+            const normUser = normalizeSentence(userRaw);
+            if (!normUser) return false;
+            return item.accepted.some(acc => normalizeSentence(acc) === normUser);
+        }
+
+        // ==========================================
+        // 3. بناء واجهات الأسئلة الأربعة ديناميكياً
+        // ==========================================
+        function renderEx1() {
+            const container = document.getElementById('ex1-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            ex1Data.forEach(item => {
+                const card = document.createElement('div');
+                card.id = `ex1-card-${item.id}`;
+                card.className = 'sentence-box bg-white border-2 border-lime-200 rounded-3xl p-4 shadow-sm space-y-3 transition-all';
+
+                const optsHtml = item.options.map(opt => `
+                    <button type="button" id="ex1-opt-${item.id}-${opt.key}" onclick="selectEx1Option(${item.id}, '${opt.key}')" class="clickable-phrase flex items-center gap-2.5 bg-slate-50 hover:bg-lime-50 border-2 border-slate-200 hover:border-lime-400 rounded-2xl px-3.5 py-2.5 text-left transition">
+                        <span class="w-7 h-7 rounded-full bg-[#6e8042] text-white font-black text-sm en-text flex items-center justify-center shrink-0">${opt.key}</span>
+                        <span class="en-text font-extrabold text-sm sm:text-base text-slate-800">${opt.text}</span>
+                    </button>
+                `).join('');
+
+                card.innerHTML = `
+                    <div class="bg-[#fef7d6] border border-amber-200 rounded-2xl px-4 py-3 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <span class="w-8 h-8 rounded-xl bg-orange-700 text-white font-black text-base flex items-center justify-center shadow shrink-0 en-text">${item.id}</span>
+                            <p class="sentence-text en-text text-base sm:text-lg font-black text-slate-900">
+                                ${item.before}
+                                <span id="ex1-blank-${item.id}" class="inline-block min-w-[90px] text-center border-b-[3px] border-slate-800 text-emerald-700 px-2 mx-1">______</span>
+                                ${item.after}
+                            </p>
+                        </div>
+                        <button type="button" onclick="speakEx1Item(${item.id})" class="audio-btn w-9 h-9 rounded-full bg-white text-lime-700 border border-lime-300 shadow-sm flex items-center justify-center shrink-0" title="استمع للجملة">
+                            <i class="fa-solid fa-volume-high text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">${optsHtml}</div>
+                    <div id="ex1-fb-${item.id}" dir="rtl" class="hidden text-xs font-extrabold px-3 py-1.5 rounded-xl"></div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function speakEx1Item(itemId) {
+            const item = ex1Data.find(x => x.id === itemId);
+            if (!item) return;
+            const chosenKey = quizState.ex1[itemId];
+            const chosen = chosenKey ? item.options.find(o => o.key === chosenKey) : null;
+            const text = chosen
+                ? `${item.before} ${chosen.text} ${item.after}`
+                : `${item.before} blank ${item.after}`;
+            speakText(text, null, false, `ex1-card-${itemId}`);
+        }
+
+        function selectEx1Option(itemId, optKey) {
+            quizState.ex1[itemId] = optKey;
+            const item = ex1Data.find(x => x.id === itemId);
+            if (!item) return;
+
+            const chosen = item.options.find(o => o.key === optKey);
+            const blank = document.getElementById(`ex1-blank-${itemId}`);
+            if (blank && chosen) blank.textContent = chosen.text;
+
+            item.options.forEach(o => {
+                const btn = document.getElementById(`ex1-opt-${itemId}-${o.key}`);
+                if (!btn) return;
+                btn.classList.remove('border-amber-500', 'bg-amber-50', 'ring-2', 'ring-amber-300', 'border-emerald-500', 'bg-emerald-50', 'border-rose-500', 'bg-rose-50');
+                if (o.key === optKey) {
+                    btn.classList.add('border-amber-500', 'bg-amber-50', 'ring-2', 'ring-amber-300');
+                }
+            });
+
+            const fb = document.getElementById(`ex1-fb-${itemId}`);
+            if (fb) fb.classList.add('hidden');
+            if (chosen) {
+                speakText(`${item.before} ${chosen.text} ${item.after}`, null, false, `ex1-card-${itemId}`);
+            }
+            updateProgressUI();
+        }
+
+        function renderWrittenSection(secKey) {
+            const section = writtenSectionsData[secKey];
+            const container = document.getElementById(`${secKey}-container`);
+            if (!section || !container) return;
+            container.innerHTML = '';
+
+            section.items.forEach(item => {
+                const card = document.createElement('div');
+                card.id = `${secKey}-card-${item.id}`;
+                card.className = `sentence-box bg-white border-2 ${section.accentRing} rounded-3xl p-4 shadow-sm space-y-3 transition-all`;
+
+                const placeholderText = secKey === 'ex2'
+                    ? 'Join using where (remember to remove "there")...'
+                    : secKey === 'ex3'
+                        ? 'Write the question here (e.g., Is this ...?)'
+                        : 'Write the corrected sentence here...';
+
+                card.innerHTML = `
+                    <!-- سطر الجملة الأصلية بالشريط الكريمي -->
+                    <div class="bg-[#fef7d6] border border-amber-200 rounded-2xl px-4 py-3 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 flex-1">
+                            <span class="w-8 h-8 rounded-xl ${section.badgeBg} text-white font-black text-base flex items-center justify-center shadow shrink-0 en-text">${item.id}</span>
+                            <p class="sentence-text en-text text-base sm:text-lg font-black text-slate-900">${item.prompt}</p>
+                        </div>
+                        <button type="button" onclick="speakText('${item.prompt.replace(/'/g, "\\'")}', null, false, '${secKey}-card-${item.id}')" class="audio-btn w-9 h-9 rounded-full bg-white text-orange-700 border border-orange-200 shadow-sm flex items-center justify-center shrink-0" title="استمع للجملة">
+                            <i class="fa-solid fa-volume-high text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- سطر الإجابة التفاعلي >> Answer -->
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="en-text text-sm font-black text-[#6e8042] flex items-center gap-1 shrink-0">
+                            <i class="fa-solid fa-angles-right text-xs"></i> Answer
+                        </span>
+                        <div class="flex items-center gap-1.5 flex-1">
+                            <input id="${secKey}-input-${item.id}" type="text" autocomplete="off" spellcheck="false" placeholder="${placeholderText}" oninput="onWrittenInputChange('${secKey}', ${item.id}, this.value)" class="answer-line-input en-text flex-1 min-w-0 bg-slate-50 focus:bg-white rounded-2xl px-4 py-2 text-sm sm:text-base font-extrabold text-slate-900 focus:outline-none">
+                            <button type="button" onclick="showWrittenHint('${secKey}', ${item.id})" class="audio-btn w-9 h-10 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 flex items-center justify-center shrink-0" title="تلميح مساعد">
+                                <i class="fa-solid fa-lightbulb text-xs"></i>
+                            </button>
+                            <button type="button" onclick="clearWrittenItem('${secKey}', ${item.id})" class="audio-btn w-9 h-10 rounded-xl bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-600 border border-slate-200 flex items-center justify-center shrink-0" title="مسح الإجابة">
+                                <i class="fa-solid fa-eraser text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- تغذية راجعة فورية للفقرة -->
+                    <div id="${secKey}-fb-${item.id}" dir="rtl" class="hidden text-xs font-extrabold px-3.5 py-2 rounded-xl"></div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function onWrittenInputChange(secKey, itemId, val) {
+            quizState[secKey][itemId] = (val || '').trim();
+            const card = document.getElementById(`${secKey}-card-${itemId}`);
+            const fb = document.getElementById(`${secKey}-fb-${itemId}`);
+            if (card) card.classList.remove('border-emerald-500', 'bg-emerald-50/40', 'border-rose-500', 'bg-rose-50/40', 'shake');
+            if (fb) fb.classList.add('hidden');
+            updateProgressUI();
+        }
+
+        function showWrittenHint(secKey, itemId) {
+            const item = writtenSectionsData[secKey]?.items.find(x => x.id === itemId);
+            if (!item) return;
+            const fb = document.getElementById(`${secKey}-fb-${itemId}`);
+            if (fb) {
+                fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+                fb.classList.add('bg-amber-100', 'text-amber-900');
+                fb.innerHTML = `<i class="fa-solid fa-lightbulb text-amber-600"></i> <strong>تلميح:</strong> ${item.hint}`;
+            }
+            showToast('تم عرض التلميح أسفل الجملة!');
+        }
+
+        function clearWrittenItem(secKey, itemId) {
+            const input = document.getElementById(`${secKey}-input-${itemId}`);
+            if (input) input.value = '';
+            onWrittenInputChange(secKey, itemId, '');
+        }
+
+        // ==========================================
+        // 4. تحديث شريط نسبة الإنجاز المباشر (20 فقرة)
+        // ==========================================
+        function getCompletionStats() {
+            const ex1Done = ex1Data.filter(item => Boolean(quizState.ex1[item.id])).length;
+            const ex2Done = writtenSectionsData.ex2.items.filter(item => (quizState.ex2[item.id] || '').trim().length > 0).length;
+            const ex3Done = writtenSectionsData.ex3.items.filter(item => (quizState.ex3[item.id] || '').trim().length > 0).length;
+            const ex4Done = writtenSectionsData.ex4.items.filter(item => (quizState.ex4[item.id] || '').trim().length > 0).length;
+
+            const totalDone = ex1Done + ex2Done + ex3Done + ex4Done;
+            const totalItems = ex1Data.length
+                + writtenSectionsData.ex2.items.length
+                + writtenSectionsData.ex3.items.length
+                + writtenSectionsData.ex4.items.length;
+            const pct = Math.round((totalDone / totalItems) * 100);
+            return { ex1Done, ex2Done, ex3Done, ex4Done, totalDone, totalItems, pct };
+        }
+
+        function updateProgressUI() {
+            const stats = getCompletionStats();
+
+            const bar = document.getElementById('top-progress-bar');
+            const topPct = document.getElementById('top-progress-pct-label');
+            const headerPct = document.getElementById('header-progress-pct');
+            const countText = document.getElementById('progress-count-text');
+            const heroAnswered = document.getElementById('hero-answered-count');
+
+            if (bar) bar.style.width = `${stats.pct}%`;
+            if (topPct) topPct.textContent = `${stats.pct}%`;
+            if (headerPct) headerPct.textContent = `${stats.pct}%`;
+            if (countText) countText.textContent = `${stats.totalDone} / ${stats.totalItems}`;
+            if (heroAnswered) heroAnswered.textContent = stats.totalDone;
+
+            const b1 = document.getElementById('ex1-progress-badge');
+            const b2 = document.getElementById('ex2-progress-badge');
+            const b3 = document.getElementById('ex3-progress-badge');
+            const b4 = document.getElementById('ex4-progress-badge');
+            if (b1) b1.textContent = `${stats.ex1Done}/4`;
+            if (b2) b2.textContent = `${stats.ex2Done}/5`;
+            if (b3) b3.textContent = `${stats.ex3Done}/5`;
+            if (b4) b4.textContent = `${stats.ex4Done}/6`;
+        }
+
+        // ==========================================
+        // 5. تصحيح الأسئلة الأربعة والتغذية الراجعة
+        // ==========================================
+        function checkEx1(silent = false) {
+            let score = 0;
+            ex1Data.forEach(item => {
+                const chosenKey = quizState.ex1[item.id];
+                const fb = document.getElementById(`ex1-fb-${item.id}`);
+                const card = document.getElementById(`ex1-card-${item.id}`);
+                const correctOpt = item.options.find(o => o.key === item.answer);
+                if (!fb || !card) return;
+
+                card.classList.remove('border-emerald-500', 'bg-emerald-50/40', 'border-rose-500', 'bg-rose-50/40', 'shake');
+                item.options.forEach(o => {
+                    const btn = document.getElementById(`ex1-opt-${item.id}-${o.key}`);
+                    if (!btn) return;
+                    btn.classList.remove('border-emerald-500', 'bg-emerald-50', 'border-rose-500', 'bg-rose-50');
+                    if (o.key === item.answer && chosenKey) btn.classList.add('border-emerald-500', 'bg-emerald-50');
+                    if (o.key === chosenKey && chosenKey !== item.answer) btn.classList.add('border-rose-500', 'bg-rose-50');
+                });
+
+                fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800', 'bg-amber-100', 'text-amber-900');
+                if (chosenKey === item.answer) {
+                    score++;
+                    card.classList.add('border-emerald-500', 'bg-emerald-50/40');
+                    fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> إجابة صحيحة! ${item.reasonAr}`;
+                } else if (!chosenKey) {
+                    card.classList.add('border-rose-500', 'bg-rose-50/40');
+                    fb.classList.add('bg-amber-100', 'text-amber-900');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> لم تختر إجابة بعد. الصحيح: (${item.answer}) <span class="en-text font-black">${correctOpt ? correctOpt.text : ''}</span>`;
+                } else {
+                    card.classList.add('border-rose-500', 'bg-rose-50/40', 'shake');
+                    fb.classList.add('bg-rose-100', 'text-rose-800');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> الصحيح هو (${item.answer}) <span class="en-text font-black">${correctOpt ? correctOpt.text : ''}</span> — ${item.reasonAr}`;
+                }
+            });
+
+            const secFb = document.getElementById('ex1-section-feedback');
+            if (secFb) {
+                secFb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-amber-100', 'text-amber-900', 'border-amber-300');
+                if (score === ex1Data.length) {
+                    secFb.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300');
+                    secFb.textContent = `ممتاز جداً! العلامة الكاملة في السؤال الأول (${score}/${ex1Data.length}).`;
+                    if (!silent) speakText('Awesome! All four answers in exercise one are correct!');
+                } else {
+                    secFb.classList.add('bg-amber-100', 'text-amber-900', 'border', 'border-amber-300');
+                    secFb.textContent = `درجتك في السؤال الأول: ${score} من ${ex1Data.length}. راجع التغذية الراجعة أسفل كل جملة!`;
+                    if (!silent) speakText(`You scored ${score} out of 4 in exercise one.`);
+                }
+            }
+            return score;
+        }
+
+        function checkWrittenSection(secKey, silent = false) {
+            const section = writtenSectionsData[secKey];
+            if (!section) return 0;
+
+            let score = 0;
+            section.items.forEach(item => {
+                const userRaw = (quizState[secKey][item.id] || '').trim();
+                const card = document.getElementById(`${secKey}-card-${item.id}`);
+                const fb = document.getElementById(`${secKey}-fb-${item.id}`);
+                if (!card || !fb) return;
+
+                card.classList.remove('border-emerald-500', 'bg-emerald-50/40', 'border-rose-500', 'bg-rose-50/40', 'shake');
+                fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800', 'bg-amber-100', 'text-amber-900');
+
+                if (isWrittenAnswerCorrect(userRaw, item)) {
+                    score++;
+                    card.classList.add('border-emerald-500', 'bg-emerald-50/40');
+                    fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> أحسنت! إجابة صحيحة: <span class="en-text font-black">${item.model}</span> — ${item.reasonAr}`;
+                } else if (!userRaw) {
+                    card.classList.add('border-rose-500', 'bg-rose-50/40');
+                    fb.classList.add('bg-amber-100', 'text-amber-900');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> لم تكتب إجابة بعد. الإجابة النموذجية: <span class="en-text font-black">${item.model}</span>`;
+                } else {
+                    card.classList.add('border-rose-500', 'bg-rose-50/40', 'shake');
+                    fb.classList.add('bg-rose-100', 'text-rose-800');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> الإجابة النموذجية: <span class="en-text font-black">${item.model}</span> — ${item.reasonAr}`;
+                }
+            });
+
+            const total = section.items.length;
+            const secFb = document.getElementById(`${secKey}-section-feedback`);
+            if (secFb) {
+                secFb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-amber-100', 'text-amber-900', 'border-amber-300');
+                if (score === total) {
+                    secFb.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300');
+                    secFb.textContent = `رائع جداً! حصلت على العلامة الكاملة في ${section.titleAr} (${score}/${total}).`;
+                    if (!silent) speakText(`Excellent! All ${total} answers are correct!`);
+                } else {
+                    secFb.classList.add('bg-amber-100', 'text-amber-900', 'border', 'border-amber-300');
+                    secFb.textContent = `درجتك في ${section.titleAr}: ${score} من ${total}. راجع الإجابات النموذجية أسفل كل فقرة!`;
+                    if (!silent) speakText(`You got ${score} out of ${total}. Check the feedback and keep going!`);
+                }
+            }
+            return score;
+        }
+
+        function submitFullQuiz() {
+            const s1 = checkEx1(true);
+            const s2 = checkWrittenSection('ex2', true);
+            const s3 = checkWrittenSection('ex3', true);
+            const s4 = checkWrittenSection('ex4', true);
+
+            const totalScore = s1 + s2 + s3 + s4;
+            const completion = getCompletionStats();
+            const totalPossible = completion.totalItems;
+            const pct = Math.round((totalScore / totalPossible) * 100);
+
+            const heroBadge = document.getElementById('hero-score-badge');
+            if (heroBadge) heroBadge.textContent = `${totalScore}/${totalPossible}`;
+
+            const reportCard = document.getElementById('final-report-card');
+            if (reportCard) {
+                reportCard.classList.remove('hidden');
+                reportCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // تحديث دائرة النسبة المئوية
+            const ring = document.getElementById('score-ring-circle');
+            const pctText = document.getElementById('final-pct-text');
+            if (ring) {
+                const offset = 314 - Math.round((314 * pct) / 100);
+                ring.style.strokeDashoffset = offset;
+                ring.style.stroke = pct >= 85 ? '#10b981' : pct >= 60 ? '#f59e0b' : '#f43f5e';
+            }
+            if (pctText) pctText.textContent = `${pct}%`;
+
+            // التقدير والترحيب باسم الطالب
+            const studentName = (document.getElementById('student-name-input')?.value || '').trim();
+            const greetingEl = document.getElementById('final-student-greeting');
+            const ratingEl = document.getElementById('final-rating-badge');
+            const summaryEl = document.getElementById('final-summary-msg');
+
+            let ratingText = 'يحتاج مراجعة القاعدة والمحاولة مجدداً';
+            let ratingClasses = 'bg-rose-100 text-rose-800 border-rose-300';
+            let voiceMsg = `Good effort! You scored ${totalScore} out of ${totalPossible}. Review the rules and try again!`;
+
+            if (pct >= 90) {
+                ratingText = 'تقدير: ممتاز متفوق 🌟';
+                ratingClasses = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+                voiceMsg = `Congratulations! Outstanding work! You scored ${totalScore} out of ${totalPossible}.`;
+                launchConfetti();
+            } else if (pct >= 75) {
+                ratingText = 'تقدير: جيد جداً 👏';
+                ratingClasses = 'bg-teal-100 text-teal-800 border-teal-300';
+                voiceMsg = `Very good job! You scored ${totalScore} out of ${totalPossible}.`;
+                launchConfetti();
+            } else if (pct >= 50) {
+                ratingText = 'تقدير: جيد 👍';
+                ratingClasses = 'bg-amber-100 text-amber-900 border-amber-300';
+            }
+
+            if (ratingEl) {
+                ratingEl.className = `inline-block px-3.5 py-1 rounded-full text-xs font-black border ${ratingClasses}`;
+                ratingEl.textContent = ratingText;
+            }
+            if (greetingEl) {
+                greetingEl.textContent = studentName ? `أحسنت يا ${studentName}!` : 'نتيجتك في اختبار Grammar 2:';
+            }
+            if (summaryEl) {
+                summaryEl.textContent = `حصلت على ${totalScore} من ${totalPossible} (${pct}%)، وبنسبة إنجاز ${completion.pct}% (${completion.totalDone} من ${completion.totalItems} فقرة). راجع التغذية الراجعة التفصيلية لكل سؤال بالأسفل.`;
+            }
+
+            document.getElementById('report-ex1-score').textContent = `${s1}/4`;
+            document.getElementById('report-ex2-score').textContent = `${s2}/5`;
+            document.getElementById('report-ex3-score').textContent = `${s3}/5`;
+            document.getElementById('report-ex4-score').textContent = `${s4}/6`;
+            document.getElementById('report-completion-pct').textContent = `${completion.pct}%`;
+
+            // بناء قائمة التغذية الراجعة التفصيلية لجميع الفقرات الـ 20
+            const listEl = document.getElementById('detailed-feedback-list');
+            if (listEl) {
+                const rows = [];
+                ex1Data.forEach(item => {
+                    const u = quizState.ex1[item.id] || '';
+                    const ok = u === item.answer;
+                    const opt = item.options.find(o => o.key === item.answer);
+                    rows.push(`
+                        <div class="p-2.5 rounded-xl border ${ok ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900'} flex items-center justify-between gap-2">
+                            <span>${ok ? '✅' : '❌'} س1 (${item.id}): <span class="en-text font-black">${opt ? opt.text : ''}</span></span>
+                            <span class="en-text text-[11px] opacity-75">${u ? `(${u})` : '—'}</span>
+                        </div>
+                    `);
+                });
+
+                const secLabels = { ex2: 'س2', ex3: 'س3', ex4: 'س4' };
+                ['ex2', 'ex3', 'ex4'].forEach(secKey => {
+                    writtenSectionsData[secKey].items.forEach(item => {
+                        const u = (quizState[secKey][item.id] || '').trim();
+                        const ok = isWrittenAnswerCorrect(u, item);
+                        rows.push(`
+                            <div class="p-2.5 rounded-xl border ${ok ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900'} space-y-0.5">
+                                <div>${ok ? '✅' : '❌'} ${secLabels[secKey]} (${item.id}): <span class="en-text font-black">${item.model}</span></div>
+                                ${!ok ? `<div class="text-[11px] opacity-80">إجابتك: <span class="en-text">${u || 'لم تُجب'}</span></div>` : ''}
+                            </div>
+                        `);
+                    });
+                });
+
+                listEl.innerHTML = rows.join('');
+            }
+
+            showToast(`تم التصحيح! درجتك ${totalScore}/${totalPossible} (${pct}%)`);
+            speakText(voiceMsg);
+        }
+
+        function showAllModelAnswers() {
+            ex1Data.forEach(item => {
+                quizState.ex1[item.id] = item.answer;
+                const opt = item.options.find(o => o.key === item.answer);
+                const blank = document.getElementById(`ex1-blank-${item.id}`);
+                if (blank && opt) blank.textContent = opt.text;
+                item.options.forEach(o => {
+                    const btn = document.getElementById(`ex1-opt-${item.id}-${o.key}`);
+                    if (!btn) return;
+                    btn.classList.remove('border-amber-500', 'bg-amber-50', 'ring-2', 'ring-amber-300', 'border-emerald-500', 'bg-emerald-50', 'border-rose-500', 'bg-rose-50');
+                    if (o.key === item.answer) btn.classList.add('border-emerald-500', 'bg-emerald-50');
+                });
+            });
+
+            ['ex2', 'ex3', 'ex4'].forEach(secKey => {
+                writtenSectionsData[secKey].items.forEach(item => {
+                    const input = document.getElementById(`${secKey}-input-${item.id}`);
+                    if (input) input.value = item.model;
+                    quizState[secKey][item.id] = item.model;
+                });
+            });
+
+            updateProgressUI();
+            checkEx1(true);
+            checkWrittenSection('ex2', true);
+            checkWrittenSection('ex3', true);
+            checkWrittenSection('ex4', true);
+            showToast('تم عرض جميع الإجابات النموذجية بنجاح!');
+            speakText('Here are all the model answers for Grammar 2 exercises.');
+        }
+
+        function resetEntireQuiz() {
+            stopAudio();
+            quizState.ex1 = {};
+            quizState.ex2 = {};
+            quizState.ex3 = {};
+            quizState.ex4 = {};
+
+            renderEx1();
+            renderWrittenSection('ex2');
+            renderWrittenSection('ex3');
+            renderWrittenSection('ex4');
+
+            [
+                'ex1-section-feedback',
+                'ex2-section-feedback',
+                'ex3-section-feedback',
+                'ex4-section-feedback',
+                'final-report-card'
+            ].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+
+            const heroBadge = document.getElementById('hero-score-badge');
+            if (heroBadge) heroBadge.textContent = '--/20';
+
+            updateProgressUI();
+            showToast('تمت إعادة الاختبار! يمكنك البدء من جديد الآن.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function launchConfetti() {
+            const colors = ['#f59e0b', '#10b981', '#0ea5e9', '#f43f5e', '#84cc16', '#eab308'];
+            for (let i = 0; i < 45; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece rounded-sm';
+                piece.style.left = `${Math.random() * 100}vw`;
+                piece.style.width = `${7 + Math.random() * 7}px`;
+                piece.style.height = `${10 + Math.random() * 8}px`;
+                piece.style.backgroundColor = colors[i % colors.length];
+                piece.style.animationDuration = `${2.2 + Math.random() * 2}s`;
+                piece.style.animationDelay = `${Math.random() * 0.5}s`;
+                document.body.appendChild(piece);
+                setTimeout(() => piece.remove(), 4800);
+            }
+        }
+
+        // ==========================================
+        // 6. نظام الصوت التعليمي الهادئ للمعلمة والمعلم (مطابق 100%)
+        // ==========================================
+        let preferMaleTeacher = false;
+        let isSlowTrainingMode = false;
+        let isSequencePlaying = false;
+        let activeTimeouts = [];
+        let speechSessionCounter = 0;
+
+        function getCurrentSpeechRate() {
+            return isSlowTrainingMode ? 0.65 : 0.76;
+        }
+
+        function showLiveReadingToast(txt) {
+            const toast = document.getElementById('liveReadingToast');
+            const wordEl = document.getElementById('toastWord');
+            const rateEl = document.getElementById('toastRateLabel');
+            if (rateEl) rateEl.innerText = `Calm Educational Voice (${getCurrentSpeechRate()}x):`;
+            if (wordEl) wordEl.innerText = txt;
+            if (toast) {
+                toast.classList.remove('opacity-0', 'translate-y-8');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function hideLiveReadingToast() {
+            const toast = document.getElementById('liveReadingToast');
+            if (toast) {
+                toast.classList.add('opacity-0', 'translate-y-8');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function toggleSpeechSpeed() {
+            isSlowTrainingMode = !isSlowTrainingMode;
+            const speedLabel = document.getElementById('speed-label');
+            if (speedLabel) {
+                speedLabel.textContent = isSlowTrainingMode ? 'بطيء جداً (0.65x)' : 'هادئ (0.76x)';
+            }
+            showToast(isSlowTrainingMode ? 'تم تفعيل النطق البطيء جداً للتدريب!' : 'تم تفعيل الصوت التعليمي الهادئ (0.76x)!');
+        }
+
+        function changeTeacherVoice(voiceMode) {
+            preferMaleTeacher = (voiceMode === 'calm-male');
+            stopAudio();
+            speakText('Hello! Good luck with your Grammar 2 exercises using where.');
+            showToast(preferMaleTeacher ? 'تم تفعيل صوت المعلم الهادئ' : 'تم تفعيل صوت المعلمة الهادئة');
+        }
+
+        function findCalmEducationalVoice(voicesList, preferMale = false) {
+            if (!voicesList || voicesList.length === 0) return null;
+            const enVoices = voicesList.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+            const pool = enVoices.length > 0 ? enVoices : voicesList;
+
+            const femalePriority = [
+                'emma online (natural)',
+                'ava online (natural)',
+                'jenny online (natural)',
+                'aria online (natural)',
+                'michelle online (natural)',
+                'ana online (natural)',
+                'clara online (natural)',
+                'sonia online (natural)',
+                'google uk english female',
+                'google us english',
+                'samantha',
+                'karen',
+                'moira',
+                'tessa'
+            ];
+
+            const malePriority = [
+                'william multilingual',
+                'william online (natural)',
+                'andrew online (natural)',
+                'liam online (natural)',
+                'ryan online (natural)',
+                'daniel',
+                'david',
+                'mark'
+            ];
+
+            const listToCheck = preferMale ? [...malePriority, ...femalePriority] : [...femalePriority, ...malePriority];
+            for (const key of listToCheck) {
+                const match = pool.find(v => v.name.toLowerCase().includes(key));
+                if (match) return match;
+            }
+            return pool[0] || null;
+        }
+
+        function setSpeakingUI(isSpeaking) {
+            const pulse = document.getElementById('teacher-pulse');
+            const stopBtn = document.getElementById('stop-audio-btn');
+            if (isSpeaking) {
+                if (pulse) pulse.classList.remove('hidden');
+                if (stopBtn) stopBtn.classList.remove('hidden');
+            } else {
+                if (pulse) pulse.classList.add('hidden');
+                if (stopBtn) stopBtn.classList.add('hidden');
+            }
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.active-reading-box').forEach(el => el.classList.remove('active-reading-box'));
+            document.querySelectorAll('.active-reading-text').forEach(el => el.classList.remove('active-reading-text'));
+        }
+
+        function highlightCardById(cardId) {
+            clearHighlights();
+            if (!cardId) return;
+            const el = document.getElementById(cardId);
+            if (!el) return;
+            el.classList.add('active-reading-box');
+            const innerText = el.querySelector('.sentence-text');
+            if (innerText) innerText.classList.add('active-reading-text');
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function stopAudio() {
+            isSequencePlaying = false;
+            speechSessionCounter++;
+            activeTimeouts.forEach(t => {
+                clearTimeout(t);
+                clearInterval(t);
+            });
+            activeTimeouts = [];
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                } catch (e) {}
+            }
+            clearHighlights();
+            hideLiveReadingToast();
+            setSpeakingUI(false);
+        }
+
+        function speakText(text, btnElement = null, keepSequenceState = false, highlightCardId = null) {
+            return new Promise((resolve) => {
+                try {
+                    if (!keepSequenceState) {
+                        stopAudio();
+                    }
+
+                    const mySession = speechSessionCounter;
+                    const rate = getCurrentSpeechRate();
+                    const pitch = preferMaleTeacher ? 0.94 : 1.04;
+
+                    if (highlightCardId) {
+                        highlightCardById(highlightCardId);
+                    }
+                    showLiveReadingToast(text);
+                    setSpeakingUI(true);
+
+                    let finished = false;
+                    let safetyTimer = null;
+                    const finishOnce = () => {
+                        if (finished) return;
+                        finished = true;
+                        if (safetyTimer) clearTimeout(safetyTimer);
+                        if (!keepSequenceState && mySession === speechSessionCounter) {
+                            clearHighlights();
+                            hideLiveReadingToast();
+                            setSpeakingUI(false);
+                        }
+                        resolve();
+                    };
+
+                    const words = text.trim().split(/\s+/).filter(Boolean).length;
+                    const safetyMs = Math.max(2200, Math.round((words / rate) * 750) + 1800);
+                    safetyTimer = setTimeout(finishOnce, safetyMs);
+                    activeTimeouts.push(safetyTimer);
+
+                    if (!('speechSynthesis' in window)) {
+                        return;
+                    }
+
+                    const startTimer = setTimeout(() => {
+                        if (mySession !== speechSessionCounter || finished) return;
+                        try {
+                            const voices = window.speechSynthesis.getVoices();
+                            const chosenVoice = findCalmEducationalVoice(voices, preferMaleTeacher);
+
+                            const utterance = new SpeechSynthesisUtterance(text);
+                            window.activeUtteranceRef = utterance;
+                            if (chosenVoice) {
+                                utterance.voice = chosenVoice;
+                                utterance.lang = chosenVoice.lang || 'en-US';
+                            } else {
+                                utterance.lang = 'en-US';
+                            }
+                            utterance.rate = rate;
+                            utterance.pitch = pitch;
+                            utterance.volume = 1.0;
+
+                            utterance.onend = finishOnce;
+                            utterance.onerror = (err) => {
+                                if (err && (err.error === 'canceled' || err.error === 'interrupted')) return;
+                                finishOnce();
+                            };
+
+                            window.speechSynthesis.speak(utterance);
+                        } catch (e) {
+                            finishOnce();
+                        }
+                    }, 50);
+                    activeTimeouts.push(startTimer);
+                } catch (err) {
+                    resolve();
+                }
+            });
+        }
+
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toast-message');
+            const toastText = document.getElementById('toast-text');
+            if (!toast || !toastText) return;
+
+            toastText.textContent = message;
+            toast.classList.remove('hidden');
+
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        window.onload = function () {
+            renderEx1();
+            renderWrittenSection('ex2');
+            renderWrittenSection('ex3');
+            renderWrittenSection('ex4');
+            updateProgressUI();
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.getVoices();
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        window.speechSynthesis.getVoices();
+                    };
+                } catch (e) {}
+            }
+        };
+    </script>
+</body>
+</html>
